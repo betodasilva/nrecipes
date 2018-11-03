@@ -1,0 +1,20 @@
+.hero {
+    background-image: url('../../assets/imgs/hero.png');
+    background-repeat:  no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.title {
+    font-weight: 400;
+    color: #fff;
+
+    > strong { 
+        font-weight: 700
+    }
+
+    @media( min-width: 1024px ) {
+        font-size: 62px;
+        margin-top: -30px;
+    }
+}
