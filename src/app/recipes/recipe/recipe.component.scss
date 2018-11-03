@@ -1,0 +1,10 @@
+.card {
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    .card-image {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        overflow: hidden;
+    }
+
+}
