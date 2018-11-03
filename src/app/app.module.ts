@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,7 @@ import { HeroComponent } from './hero/hero.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { Server } from '../providers/server.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { RecipesComponent } from './recipes/recipes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ Server ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
