@@ -12,6 +12,7 @@ import { Server } from '../providers/server.service';
 import { FilterComponent } from './filter/filter.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { SubmitrecipeComponent } from './submitrecipe/submitrecipe.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './header/header.component';
     RecipeComponent,
     FilterComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SubmitrecipeComponent
   ],
   imports: [
     BrowserModule,
