@@ -1,0 +1,52 @@
+$orange: #ff5f2e;
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0 40px;
+}
+
+h4 {
+    color: $orange;
+    font-weight: 600;
+}
+
+.filter > .option {
+    background: none;
+    appearance: none;
+    border: none;
+    outline: none;
+
+    //box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 0 rgba(255,95,46, 0.56);
+    border-radius: 5px;
+    padding: 6px 16px;
+    margin: 0 8px;
+    cursor: pointer;
+
+    color: $orange;
+
+    transition: background 280ms ease;
+
+    &:hover {
+        background: $orange;
+        color: #fff;
+    }
+
+    svg, span {
+        display: inline-block;
+        vertical-align: middle;
+        transition: fill 280ms ease, color 280ms ease;
+    }
+
+    svg {
+        margin-right: 6px;
+        fill: currentColor;
+    }
+
+    span {
+        font-weight: 500;
+        color: currentColor;
+    }
+}
