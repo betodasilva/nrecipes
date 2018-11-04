@@ -1,4 +1,6 @@
 $family-sans-serif: 'Montserrat', sans-serif;
-
+$primary: #75D701;
+$secondary: #FF5F2E;
+$danger: $secondary;
 
 @import '../../../node_modules/bulma/bulma.sass';

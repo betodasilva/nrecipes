@@ -9,6 +9,9 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { Server } from '../providers/server.service';
+import { FilterComponent } from './filter/filter.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { Server } from '../providers/server.service';
     HeroComponent,
     RecipeListComponent,
     RecipesComponent,
-    RecipeComponent
+    RecipeComponent,
+    FilterComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
