@@ -1,0 +1,12 @@
+.header {
+    padding: 12px 0;
+    border-top: 2px solid #ff5f2e;
+}
+
+.navbar-brand a {
+    font-weight: 700;
+    font-size: 21px;
+    &:hover, & {
+        color: #ff5f2e;
+    }
+}
