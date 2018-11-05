@@ -1,41 +1,55 @@
+<div class="hero hero--border-bottom">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Você sabe uma receita saudável e maravilhosa?</h1>
+      <h2 class="subtitle">Ajude o próximo. Compartilhe com a comunidade e ajude a transformar o Brasil.</h2>
+    </div>
+  </div>
+</div>
 <section class="section section--submitrecipe">
   <div class="container">
-    <form #formElement>
-      <div class="field">
-        <label class="label">Titulo</label>
-        <div class="control">
-          <input type="text" class="input" placeholder="ex: Estrogonofe diet" #titleElement>
-        </div>
+    <h3 class="subtitle">Adicionar nova receita</h3>
+    <div class="columns">
+      <div class="column is-5">
+        <form #formElement>
+          <div class="field">
+            <label class="label">Titulo</label>
+            <div class="control">
+              <input type="text" class="input" placeholder="ex: Estrogonofe diet" #titleElement>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Descrição</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Adicione uma descrição" #descElement></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input type="submit" value="Enviar" class="submit button is-primary" (click)="submitNewRecipeData($event, titleElement.value, descElement.value)">
+            </div>
+          </div>
+          <!-- <div class="field is-grouped">
+            <label class="label">Ingredientes</label>
+            <div class="control">
+              <input type="text" class="input" placeholder="Quantidade">
+            </div>
+            <div class="control">
+              <input type="text" class="input" placeholder="Quantidade: ex 20g">
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <label class="label">Ingredientes</label>
+            <div class="control">
+              <input type="text" class="input" placeholder="Quantidade">
+            </div>
+            <div class="control">
+              <input type="text" class="input" placeholder="Quantidade: ex 20g">
+            </div>
+          </div> -->
+        </form>
       </div>
-      <div class="field">
-        <label class="label">Descrição</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Adicione uma descrição" #descElement></textarea>
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <input type="submit" value="Enviar" class="submit button is-primary" (click)="submitNewRecipeData($event, titleElement.value, descElement.value)">
-        </div>
-      </div>
-      <!-- <div class="field is-grouped">
-        <label class="label">Ingredientes</label>
-        <div class="control">
-          <input type="text" class="input" placeholder="Quantidade">
-        </div>
-        <div class="control">
-          <input type="text" class="input" placeholder="Quantidade: ex 20g">
-        </div>
-      </div>
-      <div class="field is-grouped">
-        <label class="label">Ingredientes</label>
-        <div class="control">
-          <input type="text" class="input" placeholder="Quantidade">
-        </div>
-        <div class="control">
-          <input type="text" class="input" placeholder="Quantidade: ex 20g">
-        </div>
-      </div> -->
-    </form>
+    </div>
+    
   </div>
 </section>
