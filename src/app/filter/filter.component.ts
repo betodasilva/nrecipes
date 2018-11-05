@@ -12,4 +12,7 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
+  filterBy( type ) {
+    console.log(`Filtering recipes by ${type}`);
+  }
 }
