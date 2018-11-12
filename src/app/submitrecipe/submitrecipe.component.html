@@ -1,8 +1,8 @@
 <div class="hero hero--border-bottom">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">Você sabe uma receita saudável e maravilhosa?</h1>
-      <h2 class="subtitle">Ajude o próximo. Compartilhe com a comunidade e ajude a transformar o Brasil.</h2>
+      <h1 class="title is-size-4">Você conhece uma receita livre de alguma restrição alimentar?</h1>
+      <h2 class="subtitle">Compartilhe com a comunidade e melhore a alimentação do próximo.</h2>
     </div>
   </div>
 </div>
@@ -10,43 +10,62 @@
   <div class="container">
     <h3 class="subtitle">Adicionar nova receita</h3>
     <div class="columns">
-      <div class="column is-5">
-        <form #formElement>
+      <div class="column is-7">
+        <form (ngSubmit)="submitNewRecipeData(f)" #f="ngForm">
           <div class="field">
             <label class="label">Titulo</label>
             <div class="control">
-              <input type="text" class="input" placeholder="ex: Estrogonofe diet" #titleElement>
+              <input type="text" name="title" class="input" placeholder="ex: Estrogonofe diet" ngModel>
             </div>
           </div>
           <div class="field">
             <label class="label">Descrição</label>
             <div class="control">
-              <textarea class="textarea" placeholder="Adicione uma descrição" #descElement></textarea>
+              <textarea class="textarea" name="description" placeholder="Adicione uma descrição" ngModel></textarea>
             </div>
           </div>
+
+          <fieldset class="fieldset">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Ingredientes</label>
+              </div>
+              <div class="field-body">
+                <div class="control">
+                  <button class="button" type="button" (click)="addNewIngredient()">Novo ingrediente</button>
+                </div>
+              </div>
+            </div>
+            <div class="ingredient field" *ngFor="let ingredient of ingredients; let i = index;" [ngModelGroup]=" 'ingredient-'+i ">
+              <label class="label has-text-weight-light">Ingrediente</label>
+              <div class="field">
+                <div class="control">
+                  <input type="text" name="name" class="input" placeholder="Nome do ingrediente. ex: Maçã" ngModel>
+                </div>
+              </div>
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <input type="number" name="quantity" class="input" placeholder="Quantidade em num. ex: 220" ngModel>
+                </div>
+                <div class="control">
+                  <span class="select">
+                    <select name="unity" [ngModel]="ingredientDefaultUnity">
+                      <option value="g">g</option>
+                      <option value="kg">kg</option>
+                      <option value="ml">ml</option>
+                      <option value="l">l</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
           <div class="field">
             <div class="control">
-              <input type="submit" value="Enviar" class="submit button is-primary" (click)="submitNewRecipeData($event, titleElement.value, descElement.value)">
+              <input type="submit" value="Enviar" class="submit button is-primary">
             </div>
           </div>
-          <!-- <div class="field is-grouped">
-            <label class="label">Ingredientes</label>
-            <div class="control">
-              <input type="text" class="input" placeholder="Quantidade">
-            </div>
-            <div class="control">
-              <input type="text" class="input" placeholder="Quantidade: ex 20g">
-            </div>
-          </div>
-          <div class="field is-grouped">
-            <label class="label">Ingredientes</label>
-            <div class="control">
-              <input type="text" class="input" placeholder="Quantidade">
-            </div>
-            <div class="control">
-              <input type="text" class="input" placeholder="Quantidade: ex 20g">
-            </div>
-          </div> -->
         </form>
       </div>
     </div>

@@ -14,10 +14,18 @@ import { Response } from '@angular/http';
 export class RecipeListComponent implements OnInit {
   steps: Step[] = [new Step('Misturar a carne', 'Lorem ipsum dot color')];
   ingredients: Ingredient[] = [new Ingredient('Cominho', 1)];
-  recipes: Recipe[] = [new Recipe( 'Strongonofe de Frango Simples', 'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia')];
+  recipes: Recipe[] = [
+    new Recipe( 'Strongonofe de Frango Simples', 
+                'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia',
+                this.steps,
+                this.ingredients)
+  ];
   recipe: Recipe;
   constructor(private server: Server) {
-    this.recipe = new Recipe( 'Strongonofe de Frango Simples', 'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia');
+    new Recipe( 'Strongonofe de Frango Simples', 
+                'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia',
+                this.steps,
+                this.ingredients )
   }
 
   ngOnInit() {
@@ -28,7 +36,7 @@ export class RecipeListComponent implements OnInit {
       .subscribe( 
         data => {
           for ( var [k, v] of Object.entries( data ) ) {
-            this.recipes.push( new Recipe(v['title'], v['description']) )
+            this.recipes.push( new Recipe( v['title'], v['description'], this.steps, this.ingredients ) );
           }
         } );
   }
