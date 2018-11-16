@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="ingredient field" *ngFor="let ingredient of ingredients; let i = index;" [ngModelGroup]=" 'ingredient-'+i ">
-              <label class="label has-text-weight-light">Ingrediente</label>
+              <label class="label">Ingrediente #{{i+1}}</label>
               <div class="field">
                 <div class="control">
                   <input type="text" name="name" class="input" placeholder="Nome do ingrediente. ex: Maçã" ngModel>
