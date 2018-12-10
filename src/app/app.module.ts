@@ -15,6 +15,8 @@ import { FilterComponent } from './filter/filter.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitrecipeComponent } from './submitrecipe/submitrecipe.component';
+import { RecipeviewComponent } from './recipes/recipeview/recipeview.component';
+import { RecipeViewResolverService } from 'src/providers/recipeviewresolver.service';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { SubmitrecipeComponent } from './submitrecipe/submitrecipe.component';
     FilterComponent,
     HomeComponent,
     HeaderComponent,
-    SubmitrecipeComponent
+    SubmitrecipeComponent,
+    RecipeviewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { SubmitrecipeComponent } from './submitrecipe/submitrecipe.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [ Server ],
+  providers: [ Server, RecipeViewResolverService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

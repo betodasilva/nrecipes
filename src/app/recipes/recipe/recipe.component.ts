@@ -10,14 +10,8 @@ export class RecipeComponent implements OnInit {
 
   @Input('recipe') recipe: Recipe;
   constructor() {
-    //this.recipe = this.rec;
   }
 
-  ngOnInit() {
-    //this.steps.push(  );
-    //this.ingredients.push(  );
-    //this.recipe = ;
-    
-  }
+  ngOnInit() {}
 
 }

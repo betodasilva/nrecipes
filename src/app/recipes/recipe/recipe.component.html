@@ -1,13 +1,15 @@
 <div class="card">
-  <div class="card-image">
-    <figure class="image is-16by9">
-      <img src="{{ recipe.image }}">
-    </figure>
-  </div>
-  <div class="card-content">
-    <h2 class="title">{{ recipe.title }}</h2>
-    <div class="content">
-      <p>{{ recipe.description }}</p>
+  <a routerLink="/receita/{{recipe.slug}}">
+    <div class="card-image">
+      <figure class="image is-16by9">
+        <img src="{{ recipe.image }}">
+      </figure>
     </div>
-  </div>
+    <div class="card-content">
+      <h2 class="title">{{ recipe.title }}</h2>
+      <div class="content">
+        <p>{{ recipe.description }}</p>
+      </div>
+    </div>
+  </a>
 </div>
