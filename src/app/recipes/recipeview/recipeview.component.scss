@@ -32,28 +32,43 @@
         }
     }
 
-    &__step {
-        padding-left: 80px;
+    &__description {
+        font-weight: 500;
+        margin-bottom: 24px;
+        font-size: 18px;
+    }
 
+    &__step {
+        /* padding-left: 80px; */
+        padding-bottom: 42px;
         &-number {
-            $size: 42px;
+            display: inline-block;
             border-radius: 100%;
+
+            $size: 42px;
             width: $size;
             height: $size;
             line-height: $size;
+
             font-size: 24px;
             text-align: center;
             background: #ff5f2e;
             color: #fff;
         }
+
+
+        &-title {
+            display: inline-block;
+            font-size: 24px;
+            margin-left: 24px;
+            font-weight: 700;
+        }
+    
+        p {
+            font-size: 18px;
+            margin-left: 66px;
+        }
     }
 
-    h2 {
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-    p {
-        font-size: 18px;
-    }
+   
 }

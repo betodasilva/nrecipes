@@ -2,16 +2,21 @@
   <img [src]="recipe.image" [alt]="recipe.title">
 </div>
 <div class="container">
-<article class="recipe__content">
-  <h1 class="recipe__title">{{ recipe.title }}</h1>
-  <p>{{ recipe.description }}</p>
-  <div class="recipe__step" *ngFor="let step of recipe.steps; let ind = index;">
-    <span class="recipe__step-number">{{ ind + 1}}</span>
-    <h2 class="recipe__step-title">{{ step.name }}</h2>
-    <p [innerHTML]="step.description"></p>
-    <ng-container *ngIf="step.image">
-      <img [src]="step.image" alt="step.name">
-    </ng-container>  
+  <div class="columns">
+    <div class="column is-full">
+        <article class="recipe__content">
+          <h1 class="recipe__title">{{ recipe.title }}</h1>
+          <p class="recipe__description">{{ recipe.description }}</p>
+          <div class="recipe__step" *ngFor="let step of recipe.steps; let ind = index;">
+            <span class="recipe__step-number">{{ ind + 1}}</span>
+            <h2 class="recipe__step-title">{{ step.name }}</h2>
+            <p [innerHTML]="step.step_description"></p>
+            <ng-container *ngIf="step.image">
+              <img [src]="step.image" alt="step.name">
+            </ng-container>  
+          </div>
+        </article>
+    </div>
   </div>
-</article>
+  
 </div>
