@@ -14,19 +14,9 @@ import { Response } from '@angular/http';
 export class RecipeListComponent implements OnInit {
   steps: Step[] = [new Step('Misturar a carne', 'Lorem ipsum dot color')];
   ingredients: Ingredient[] = [new Ingredient('Cominho', 1)];
-  recipes: Recipe[] = [
-    new Recipe( 'Strongonofe de Frango Simples', 
-                'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia',
-                this.steps,
-                this.ingredients)
-  ];
+  recipes: Recipe[] = [];
   recipe: Recipe;
-  constructor(private server: Server) {
-    new Recipe( 'Strongonofe de Frango Simples', 
-                'Strongofe de frango feito com creme de leite e molho de tomate que fica uma delícia',
-                this.steps,
-                this.ingredients )
-  }
+  constructor(private server: Server) {}
 
   ngOnInit() {
     this.server.getRecipes()
