@@ -34,15 +34,15 @@ export class SubmitrecipeComponent implements OnInit {
       new Recipe(
         title,
         description,
-        ingredients,
-        steps
+        steps,
+        ingredients
       )
     )
     
   }
 
   extractIngredients( data ){ 
-    const ingredients = [];
+    const ingredients: Ingredient[] = [];
     Object.keys( data ).forEach( (key, index) => {
       if ( key.indexOf('ingredient') > -1 )
         ingredients.push( data[key] );
@@ -52,7 +52,7 @@ export class SubmitrecipeComponent implements OnInit {
   }
 
   extractSteps( data ){ 
-    const steps = [];
+    const steps: Step[] = [];
     Object.keys( data ).forEach( (key, index) => {
       if ( key.indexOf('step') > -1 )
         steps.push( data[key] );
