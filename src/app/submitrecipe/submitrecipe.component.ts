@@ -25,9 +25,40 @@ export class SubmitrecipeComponent implements OnInit {
   }
 
   submitNewRecipeData( form ){
-    console.log( form );
-    //this.addNewRecipe( title, description );
+
+    const { title, description } = form.value;
+    const ingredients = this.extractIngredients( form.value );
+    const steps = this.extractSteps( form.value );
+
+    this.addNewRecipe(
+      new Recipe(
+        title,
+        description,
+        ingredients,
+        steps
+      )
+    )
     
+  }
+
+  extractIngredients( data ){ 
+    const ingredients = [];
+    Object.keys( data ).forEach( (key, index) => {
+      if ( key.indexOf('ingredient') > -1 )
+        ingredients.push( data[key] );
+    });
+    
+    return ingredients;
+  }
+
+  extractSteps( data ){ 
+    const steps = [];
+    Object.keys( data ).forEach( (key, index) => {
+      if ( key.indexOf('step') > -1 )
+        steps.push( data[key] );
+    });
+    
+    return steps;
   }
 
   addNewIngredient(){
@@ -38,14 +69,14 @@ export class SubmitrecipeComponent implements OnInit {
     this.steps.push( new Step('', '') );
   }
 
-  /* addNewRecipe( title, description ){
+  addNewRecipe( recipe: Recipe ){
     this.server
-        .createRecipe( new Recipe(title, description) )
+        .createRecipe( recipe )
         .subscribe(
           res => console.log( res ),
           err => console.log( err ),
           () => console.log( 'done' )
         );
-  } */
+  }
 
 }
