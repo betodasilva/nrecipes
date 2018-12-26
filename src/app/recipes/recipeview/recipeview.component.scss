@@ -36,6 +36,11 @@
         font-weight: 500;
         margin-bottom: 24px;
         font-size: 18px;
+        display: inline-block;
+        vertical-align: top;
+        @media ( min-width: 768px ) {
+            max-width: calc( 60% - 50px );
+        }
     }
 
     &__step {
@@ -71,4 +76,18 @@
     }
 
    
+}
+
+.recipe__ingredients {
+    background: #e6e6e6;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 160px;
+    margin-bottom: 24px;
+    @media ( min-width: 768px ) {
+        margin-left: 50px;
+        width: 40%;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }

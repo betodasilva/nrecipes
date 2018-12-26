@@ -7,6 +7,13 @@
         <article class="recipe__content">
           <h1 class="recipe__title">{{ recipe.title }}</h1>
           <p class="recipe__description">{{ recipe.description }}</p>
+          <div class="recipe__ingredients">
+            <ul>
+              <li *ngFor="let ingredient of recipe.ingredients">
+                <span><strong>{{ ingredient.quantity + ' ' + ingredient.unity }}</strong> {{ ingredient.name }}</span>
+              </li>
+            </ul>
+          </div>
           <div class="recipe__step" *ngFor="let step of recipe.steps; let ind = index;">
             <span class="recipe__step-number">{{ ind + 1}}</span>
             <h2 class="recipe__step-title">{{ step.name }}</h2>

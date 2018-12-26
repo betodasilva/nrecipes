@@ -25,7 +25,7 @@ export class SubmitrecipeComponent implements OnInit {
   }
 
   submitNewRecipeData( form ){
-
+    console.log( form.value );
     const { title, description } = form.value;
     const ingredients = this.extractIngredients( form.value );
     const steps = this.extractSteps( form.value );
