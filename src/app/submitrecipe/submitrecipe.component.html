@@ -1,4 +1,4 @@
-<div class="hero hero--border-bottom">
+<div class="hero hero--submitrecipe has-text-white">
   <div class="hero-body">
     <div class="container">
       <h1 class="title is-size-4">Você conhece alguma receita livre de restrição alimentar?</h1>
@@ -8,9 +8,9 @@
 </div>
 <section class="section section--submitrecipe">
   <div class="container">
-    <h3 class="subtitle">Adicionar nova receita</h3>
     <div class="columns">
-      <div class="column is-7">
+      <div class="column column--form is-10">
+        <h3 class="subtitle column__subtitle">Adicionar nova receita</h3>
         <form (ngSubmit)="submitNewRecipeData(f)" #f="ngForm">
           <div class="field">
             <label class="label">Titulo</label>

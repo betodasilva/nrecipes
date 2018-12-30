@@ -1,8 +1,9 @@
 .hero {
-    
-    &--border-bottom {
-        position: relative;
-        border-bottom: 1px solid  rgba(69, 69, 69, 0.3);
+    &--submitrecipe {
+        background: #ff5f2e;
+        .title, .subtitle {
+            color: #fff;
+        }
     }
 }
 
@@ -12,4 +13,37 @@
     margin-bottom: 1.25rem;
     border: 1px solid #ccc;
     padding: 20px;
+}
+
+.column--form {
+    padding: 0 40px 60px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.column__subtitle {
+    text-align: center;
+    line-height: 1px;
+    margin-bottom: 60px;
+    position: relative;
+    font-size: 16px;
+
+     &:before, &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        line-height: 1px;
+        width: calc( 50% - 60px );
+        height: 1px;
+        background: #ccc;
+    }
+
+    &:before {
+        left: -40px;
+    }
+
+    &:after {
+        right: -40px;
+    }
 }
